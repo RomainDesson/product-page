@@ -1,5 +1,5 @@
 import React from "react"
-import { ProductPageContainer } from "./features/product-page/product-page.container"
+import { ProductPageContainer } from "./features/product-page/application/product-page.container"
 import "./App.css"
 
 function App() {
