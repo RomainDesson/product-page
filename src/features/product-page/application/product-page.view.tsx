@@ -1,19 +1,26 @@
 import React from "react"
-import "./product-page.css"
 import SneakersImg from "../../../ressources/sneakers.png"
 import { Header } from "../../../layout/header"
 import { Footer } from "../../../layout/footer"
-export const ProductPageView = () => {
+import { Elements } from "@stripe/react-stripe-js"
+import { loadStripe } from "@stripe/stripe-js"
+import { CardForm } from "../../card-form/card-form"
+const stripePromise = loadStripe("pk_test_JJ1eMdKN0Hp4UFJ6kWXWO4ix00jtXzq5XG")
+interface IProps {
+	sizeButton: string
+}
+
+export const ProductPageView = ({ sizeButton }: IProps) => {
 	return (
 		<>
 			<Header />
-			<div className={"container grid grid-cols-2"}>
+			<div className={"grid grid-cols-2"}>
 				<div className={"row-span-2 h-screen"}>
 					<img src={SneakersImg} alt={"sneakers"} />
 				</div>
 				<div className={"px-10"}>
 					<div className={"product-decription"}>
-						<h2 className={"mb-5"}>AIR JORDAN 1 Retro High</h2>
+						<h2 className={"mb-10 text-4xl"}>AIR JORDAN 1 Retro High</h2>
 						<p className={"mb-10"}>
 							La Air Jordan 1 High Dark Mocha est l&apos;une des sorties les
 							plus attendues de cette année. Ce modèle iconique est cette fois
@@ -36,14 +43,14 @@ export const ProductPageView = () => {
 					</div>
 					<div className={"product-params mb-20"}>
 						<h2>Tailles :</h2>
-						<button className={"bg-gray-100 px-10 m-1"}>38</button>
-						<button className={"bg-gray-100 px-10 m-1"}>39</button>
-						<button className={"bg-gray-100 px-10 m-1"}>40</button>
-						<button className={"bg-gray-100 px-10 m-1"}>41</button>
-						<button className={"bg-gray-100 px-10 m-1"}>42</button>
-						<button className={"bg-gray-100 px-10 m-1"}>43</button>
-						<button className={"bg-gray-100 px-10 m-1"}>44</button>
-						<button className={"bg-gray-100 px-10 m-1"}>45</button>
+						<button className={sizeButton}>38</button>
+						<button className={sizeButton}>39</button>
+						<button className={sizeButton}>40</button>
+						<button className={sizeButton}>41</button>
+						<button className={sizeButton}>42</button>
+						<button className={sizeButton}>43</button>
+						<button className={sizeButton}>44</button>
+						<button className={sizeButton}>45</button>
 					</div>
 					<div className={"buy-button"}>
 						<button
@@ -54,6 +61,9 @@ export const ProductPageView = () => {
 					</div>
 				</div>
 			</div>
+			<Elements stripe={stripePromise}>
+				<CardForm />
+			</Elements>
 			<Footer />
 		</>
 	)

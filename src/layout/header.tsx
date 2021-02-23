@@ -2,7 +2,7 @@ import React from "react"
 import Logo from "../ressources/logo.png"
 export const Header = () => {
 	return (
-		<div className={"container h-29 grid grid-cols-3 py-9 bg-black text-white"}>
+		<div className={"h-29 grid grid-cols-3 py-9 bg-black text-white mb-10"}>
 			<div>
 				<img src={Logo} className={"h-24 pl-5"} alt={"logo"} />
 			</div>

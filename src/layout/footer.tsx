@@ -2,20 +2,21 @@ import React from "react"
 
 export const Footer = () => {
 	return (
-		<div className={"container h-24 text-white"}>
+		<div className={"h-24 text-white"}>
 			<div className={"grid grid-cols-3 grid-rows-2 bg-black"}>
 				<div className={"col-span-3 text-center"}>
-					<h2>
+					<h2 className={"text-3xl mt-10 mb-5 font-bold"}>
 						Inscrivez vous à notre newsletter et bénéficiez de 15$ offert !
 					</h2>
-					<h3>
+					<h3 className={"text-xl mb-5"}>
 						Dernières sorties, offres exclusives et événements à ne pas manquer
-						: restez informés de toute notre actualité !
+						:
+						<br /> restez informés de toute notre actualité !
 					</h3>
-					<input type={"text"} />
+					<input type={"text"} className={"h-10 w-1/4 text-black"} />
 				</div>
 				<div>
-					Contact
+					<h4 className={"text-xl mb-5 mt-10 font-bold"}>Contact</h4>
 					<ul>
 						<li>Appelez nous: 01 83 XX XX XX</li>
 						<li>(du lundi au vendredi - de 10h à 19h)</li>
@@ -24,7 +25,7 @@ export const Footer = () => {
 					</ul>
 				</div>
 				<div>
-					En savoir plus
+					<h4 className={"text-xl mb-5 mt-10 font-bold"}>En savoir plus</h4>
 					<ul>
 						<li>Concept</li>
 						<li>Authenticité & FAQ</li>
@@ -37,7 +38,9 @@ export const Footer = () => {
 					</ul>
 				</div>
 				<div>
-					Trouvez votre produit
+					<h4 className={"text-xl mb-5 mt-10 font-bold"}>
+						Trouvez votre produit
+					</h4>
 					<ul>
 						<li>Recherche</li>
 						<li>Nouveautés</li>
